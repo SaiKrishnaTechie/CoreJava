@@ -4,22 +4,22 @@
 <title>Hello World - JSP tutorial</title>
 </head>
 <body>
-    <% ArrayList<String> name=new ArrayList<String>();
-    	ArrayList<String> number=new ArrayList<String>();
+    <% String[] name=new String[3];
+    	String[] number=new String[3];
     	int i;
-    
-    	
-    		name.add(request.getParameter("name"));
-    	number.add(request.getParameter("number"));
+    	for(i=0;i<3;i++)
+    	{
+    		name[i]=request.getParameter("name");
+    	number[i]=request.getParameter("number");
 
-    	
+    	}
     
     %>
 
 <h2>
 	<%
-	for(String s:name )
-	{ %>Name = <%= name[s]%>
+	for(i=0;i<3;i++)
+	{ %>Name = <%= name[i]%>
 		Number= <%= number[i]
 	}
 
